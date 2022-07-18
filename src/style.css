@@ -1,8 +1,28 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  grid-template:
+  'header'10vh
+  'main'90vh
+  'footer'10vh/
+  100vw;
+}
+#header{
+  grid-area: header;
+  background-color: aqua;
+
+}
+#main{
+  grid-area: main;
+background-color: brown;
+}
+#footer{
+  grid-area: footer;
+  background-color: blue;
+
 }
