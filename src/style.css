@@ -1,37 +1,10 @@
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
->>>>>>> 71917dec0d742c9c7e17f5f7b8c9f86eb887a26a
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-<<<<<<< HEAD
-
-body{
-  display: grid;
-  grid-template:
-  'header'10vh
-  'main'90vh
-  'footer'10vh/
-  100vw;
-}
-#header{
-  grid-area: header;
-  background-color: aqua;
-
-}
-#main{
-  grid-area: main;
-background-color: brown;
-}
-#footer{
-  grid-area: footer;
-  background-color: blue;
-
-=======
 img{
   width: 100%;
 }
@@ -45,21 +18,51 @@ a{
 body{
   font-family: 'Bebas Neue', cursive;
   background-color: #000;
+  
+
+
+} 
+.backgroundimg{
+  /* background-image: url("./netflix-background-128505-385441-537479.png") ;
+  background-size: cover;
+  height: 100vh;   */
+  /* filter: blur(2px); */
+  
 }
 /* header */
 header{
   width: 100%;
   height: 80px;
-  background: #000;
+  background: transparent;
+  background-color: #000;
   color: #fff;
-  text-align: center;
+ 
+  place-content: center;
   line-height: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  position: absolute;
+  z-index: 5;
 }
 .logo-text{
   color: #e50914;
   font-size: 30px;
+  display: grid;
+  align-items: center;
+  height: 100px;
+  
+  
+  
+}
+.logoimg{
+  width: 200px;
+ display: block;
+ align-self: center;
+
+ 
+ 
+
+ 
 }
 .header-ul{
   display: grid;
@@ -67,12 +70,25 @@ header{
   place-items: center;
   justify-content: center;
   gap: 10px;
+  padding-left:70% ;
 }
 .menu-link{
+ 
   color: #fff;
+  font-size: 18px;
+  width: 100px;
+  height: 40px;
+  background-color: red;
+  border-radius: 6px;
+  
 }
 
 /* main */
+main{
+  background-image: url("./netflix-background-128505-385441-537479.png") ;
+  background-size: cover;
+  height: 100vh; 
+}
 .movies-container{
   margin-top: 3rem;
   padding: 0rem 3rem;
@@ -90,5 +106,86 @@ header{
 .movie-details{
   padding-left: 1rem;
   padding-bottom: 1rem;
->>>>>>> 71917dec0d742c9c7e17f5f7b8c9f86eb887a26a
+}
+.containeri{
+  padding-top: 8%;
+  text-align: center;
+  font-family:inherit ;
+  color: white;
+  
+}
+.containeri h1{
+  font-size: 100px;
+  font-weight:100;
+}
+.containeri p{
+  padding-top: 1%;
+  font-size: 25px;
+}
+.containeri h3{
+  padding-top: 1%;
+  font-size: 30px;
+  font-weight:100;
+}
+.container {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 450px;
+  margin: 50px auto;
+  padding: 16px;
+  background-color: #292929;
+  color: #ffffff;
+  border-radius: 4px;
+}
+.container h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+.container .form-element {
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 16px;
+}
+.form-element input {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  padding: 16px 20px 0 20px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #444;
+  color: #ffffff;
+}
+.floating-label {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  left: 20px;
+  font-size: 18px;
+  cursor: text;
+  color: #8c8c8c;
+  
+}
+.btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 24px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  background-color: #e50914;
+}
+input:focus ~ .floating-label,
+input:valid ~ .floating-label {
+  font-size: 11px;
+  top: 7px;
 }
