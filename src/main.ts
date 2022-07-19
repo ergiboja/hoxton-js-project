@@ -83,6 +83,13 @@ let state = {
     },
   ],
 };
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "c525579552mshc5c64f2d7ce0330p170318jsnd8497299cf00",
+    "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
+  },
+};
 
 function renderAMovieCard() {
   let movieContainer = document.querySelector(".movies-container");
