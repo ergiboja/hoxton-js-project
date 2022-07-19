@@ -94,13 +94,11 @@ main{
   padding: 0rem 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
 }
 .single-movie-card{
   height: auto;
-  width: 250px;
+  width: 200px;
   border: solid 1px rgba(255, 0, 0, 0.567);
-  /* border-radius: 12px; */
   color: rgb(255, 255, 255);
 }
 .movie-details{
