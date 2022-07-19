@@ -1,34 +1,5 @@
 
 import './style.css'
-let header = document.querySelector("#header");
-let maincontainer = document.querySelector("#main-container")
-let main = document.querySelector("#main");
-
-function renderMainPage(){
-
-    header.innerHTML = "";
-        main.innerHTML = "";
-
-    let headerdiv = document.createElement('div');
-    headerdiv.className = "logo-text";
-    let imgEL = document.createElement('img');
-    imgEL.src = "./img/netflix-82871.png";
-    imgEL.className = "logoimg"
-    
-
-    let divheaderlink = document.createElement('div');
-    divheaderlink.className = "header-links";
-    
-
-    let ulel = document.createElement('ul');
-    ulel.className = "header-ul";
-    let liel = document.createElement('li');
-    let buttonel = document.createElement('button');
-    buttonel.className = "menu-link";
-    buttonel.type = "button";
-    buttonel.innerText = "Sign In";
- 
-
 let state = {
   movies: [
     {
@@ -112,15 +83,52 @@ let state = {
     },
   ],
 };
+
+// fetching data from the API
 const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "c525579552mshc5c64f2d7ce0330p170318jsnd8497299cf00",
-    "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
-  },
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'c525579552mshc5c64f2d7ce0330p170318jsnd8497299cf00',
+		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+	}
 };
 
+fetch('https://moviesdatabase.p.rapidapi.com/titles?info=mini_info&limit=10&page=1&titleType=movie&genre=Action&year=2022', options)
+	.then(response => response.json())
+	.then(response => {
+    state.movies = response;
+    console.log(state.movies);
+    }
+  )
 
+let header = document.querySelector("#header");
+let maincontainer = document.querySelector("#main-container")
+let main = document.querySelector("#main");
+
+function renderMainPage(){
+
+    header.innerHTML = "";
+    main.innerHTML = "";
+
+    let headerdiv = document.createElement('div');
+    headerdiv.className = "logo-text";
+    let imgEL = document.createElement('img');
+    imgEL.src = "./img/netflix-82871.png";
+    imgEL.className = "logoimg"
+    
+
+    let divheaderlink = document.createElement('div');
+    divheaderlink.className = "header-links";
+    
+
+    let ulel = document.createElement('ul');
+    ulel.className = "header-ul";
+    let liel = document.createElement('li');
+    let buttonel = document.createElement('button');
+    buttonel.className = "menu-link";
+    buttonel.type = "button";
+    buttonel.innerText = "Sign In";
+ 
     let divofmain = document.createElement('div');
 
 
@@ -168,6 +176,7 @@ const options = {
     pswlabel.innerText = "Password";
     let buttonsignup = document.createElement("button");
     buttonsignup.className = "btn";
+    
     buttonsignup.innerText = "Sign Up";
 
     header?.append(headerdiv,divheaderlink);
@@ -188,7 +197,6 @@ const options = {
 }
 
 function signinPage(){
-       
     header.innerHTML = "";
     main.innerHTML = "";
     let headerdiv = document.createElement('div');
@@ -257,6 +265,7 @@ let buttonsignup = document.createElement("button");
 buttonsignup.className = "btn";
 buttonsignup.innerText = "Sign In";
 
+
 header?.append(headerdiv,divheaderlink);
 headerdiv.append(imgEL);
 liel.append(buttonel1);
@@ -276,51 +285,42 @@ buttonel1.addEventListener("click",renderMainPage)
 }
 
 renderMainPage()
+
 function renderAMovieCard() {
   let movieContainer = document.querySelector(".movies-container");
 
-  // <div class="single-movie-card">
   let movieCard = document.createElement("div");
   movieCard.classList.add("single-movie-card");
 
   let cardImg = document.createElement("img");
   cardImg.src = state.movies[0].poster;
 
-  //       <div class="movie-details">
   let movieDetails = document.createElement("div");
   movieDetails.classList.add("movie-details");
-  //         <h1>SQUID GAMES</h1>
   let movieTitle = document.createElement("h1");
   movieTitle.innerHTML = state.movies[0].title;
-  //         <div class="year">Year : 1994</div>
+
   let movieYear = document.createElement("div");
   movieYear.classList.add("year");
   movieYear.innerText = state.movies[0].year;
-  //         <div class="duration">Duration: 2hrs 30min</div>
+
   let movieDuration = document.createElement("div");
   movieDuration.classList.add("duration");
   movieDuration.innerText = state.movies[0].duration;
-  //         <div class="category">Drama</div>
+
   let movieCategory = document.createElement("div");
   movieCategory.classList.add("category");
   movieCategory.innerText = state.movies[0].genre;
 
-  //         <div class="rating">Rating : 9.2</div>
   let movieRating = document.createElement("div");
   movieRating.classList.add("rating");
   movieRating.innerText = state.movies[0].rating;
-  // <div class="movie-description">
+
   let movieDescription = document.createElement("div");
   movieDescription.classList.add("movie-description");
-  //             <p>Two imprisoned
-  //             </p>
+
   let moviePlot = document.createElement("p");
   moviePlot.innerText = state.movies[0].plot;
-  //           ...
-  //             </p>
-  //           </div>
-  //           <button class="watch-now">Watch Now</button>
-  //         </div>
 
   let watchNow = document.createElement("button");
   watchNow.classList.add("watch-now");
