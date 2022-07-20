@@ -84,7 +84,7 @@ main{
   background-size: cover;
   height: 100vh; 
 }
-.movies-container{
+.main-container{
   margin-top: 3rem;
   padding: 0rem 3rem;
   display: grid;

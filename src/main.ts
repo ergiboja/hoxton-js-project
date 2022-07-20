@@ -1,87 +1,18 @@
 
 import './style.css'
 let state = {
-  movies: [
+  movies: [],
+  users : [
     {
-      title: "The Shawshank Redemption",
-      year: "Year : 1994",
-      rating: "9.2",
-      duration: "142 min",
-      genre: "Drama",
-      plot: "Two imprisoned...",
-      poster: "https://i.ytimg.com/vi/19THOH_dvxg/movieposter_en.jpg",
+      email: "john@john.com",
+      password: "john",
     },
     {
-      title: "The Godfather",
-      year: "Year : 1972",
-      rating: "9.2",
-      duration: "175 min",
-      genre: "Drama",
-      plot: "Two imprisoned...",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
-    {
-      title: "The Godfather: Part II",
-      year: "Year : 1974",
-      rating: "9.0",
-      duration: "202 min",
-      genre: "Drama",
-      plot: "Two imprisoned...",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
-    {
-      title: "The Godfather",
-      year: "Year : 1972",
-      rating: "9.2",
-      duration: "175 min",
-      genre: "Drama",
-      plot: "Two imprisoned...",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
-    {
-      title: "The Godfather",
-      year: "Year : 1972",
-      rating: "9.2",
-      duration: "175 min",
-      genre: "Drama",
-      plot: "Two imprisoned...",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
-    {
-      title: "The Godfather",
-      year: "Year : 1972",
-      rating: "9.2",
-      duration: "175 min",
-      genre: "Drama",
-      plot: "Two imprisoned...",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
-    {
-      title: "The Godfather",
-      year: "Year : 1972",
-      rating: "9.2",
-      duration: "175 min",
-      genre: "Drama",
-      plot: "Two imprisoned...",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
-    {
-      title: "The Godfather",
-      year: "Year : 1972",
-      rating: "9.2",
-      duration: "175 min",
-      genre: "Drama",
-      plot: "Two imprisoned...",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
+      email: "jane@jane.com",
+      password: "jane",
+    }
   ],
+
 };
 
 // fetching data from the API
@@ -93,13 +24,16 @@ const options = {
 	}
 };
 
-fetch('https://moviesdatabase.p.rapidapi.com/titles?info=mini_info&limit=10&page=1&titleType=movie&genre=Action&year=2022', options)
+fetch('https://moviesdatabase.p.rapidapi.com/titles?info=mini_info&limit=20&page=1&titleType=movie&genre=Action&year=2022', options)
 	.then(response => response.json())
 	.then(response => {
-    state.movies = response;
+    state.movies = response.results;
+    render();
+    console.log(response);
     console.log(state.movies);
     }
   )
+
 
 let header = document.querySelector("#header");
 let maincontainer = document.querySelector("#main-container")
@@ -266,6 +200,7 @@ buttonsignup.className = "btn";
 buttonsignup.innerText = "Sign In";
 
 
+
 header?.append(headerdiv,divheaderlink);
 headerdiv.append(imgEL);
 liel.append(buttonel1);
@@ -284,25 +219,60 @@ buttonel1.addEventListener("click",renderMainPage)
 
 }
 
-renderMainPage()
+function renderHeader(){
+  let movieContainer = document.querySelector(".main-container");
 
+  // <!-- <div class="logo-text"><img src="./img/netflix-82871.png" class="logoimg">
+  let headerdiv = document.createElement('div');
+  headerdiv.className = "logo-text";
+  let imgEL = document.createElement('img');
+  imgEL.src = "./img/netflix-82871.png";
+  imgEL.className = "logoimg"
+  //       </div>
+
+  //       <div class="header-links">
+  let divheaderlink = document.createElement('div');
+  divheaderlink.className = "header-links";
+  //       <ul class="header-ul">
+  let ulel = document.createElement('ul');
+  ulel.className = "header-ul";
+  //       <li>
+  let liel = document.createElement('li');
+  //       <button class="menu-link">Sign Up</button>
+  let buttonel = document.createElement('button');
+  buttonel.className = "menu-link";
+  buttonel.type = "button";
+  buttonel.innerText = "Account";
+  //         <ul class="header-ul">
+  //           <li>
+  //             <button class="menu-link" type="button">Sign In</button>
+  //           </li>
+  //         </ul>
+  //       </div> -->
+  headerdiv.append(imgEL);
+  liel.append(buttonel);
+  ulel.append(liel);
+  divheaderlink.append(ulel);
+  movieContainer.append(headerdiv,divheaderlink);
+}
+// need work on this function
 function renderAMovieCard() {
-  let movieContainer = document.querySelector(".movies-container");
+  let movieContainer = document.querySelector(".main-container");
 
   let movieCard = document.createElement("div");
   movieCard.classList.add("single-movie-card");
 
   let cardImg = document.createElement("img");
-  cardImg.src = state.movies[0].poster;
+  cardImg.src = state.movies[0].primaryImage.url;
 
   let movieDetails = document.createElement("div");
   movieDetails.classList.add("movie-details");
   let movieTitle = document.createElement("h1");
-  movieTitle.innerHTML = state.movies[0].title;
+  movieTitle.innerHTML = state.movies[0].titleText.text;
 
   let movieYear = document.createElement("div");
   movieYear.classList.add("year");
-  movieYear.innerText = state.movies[0].year;
+  movieYear.innerText = state.movies[0].releaseDate.year;
 
   let movieDuration = document.createElement("div");
   movieDuration.classList.add("duration");
@@ -348,8 +318,18 @@ function renderAMovieCard() {
 }
 
 function render() {
-  for (let elem of state.movies) {
-    renderAMovieCard();
-  }
+  // let movieContainer = document.querySelector(".main-container");
+  // movieContainer.innerHTML = "";
+  // if(state.users[0].email === "john@john.com"){
+  //   // renderHeader();
+  //   for (let elem of state.movies) {
+  //     renderAMovieCard();
+  // }
+  // }else{
+
+    
+  // }
+  renderMainPage();
 }
-render();
+
+// render();
