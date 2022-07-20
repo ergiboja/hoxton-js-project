@@ -39,185 +39,185 @@ let header = document.querySelector("#header");
 let maincontainer = document.querySelector("#main-container")
 let main = document.querySelector("#main");
 
-function renderMainPage(){
+// function renderMainPage(){
 
-    header.innerHTML = "";
-    main.innerHTML = "";
+//     header.innerHTML = "";
+//     main.innerHTML = "";
 
-    let headerdiv = document.createElement('div');
-    headerdiv.className = "logo-text";
-    let imgEL = document.createElement('img');
-    imgEL.src = "./img/netflix-82871.png";
-    imgEL.className = "logoimg"
+//     let headerdiv = document.createElement('div');
+//     headerdiv.className = "logo-text";
+//     let imgEL = document.createElement('img');
+//     imgEL.src = "./img/netflix-82871.png";
+//     imgEL.className = "logoimg"
     
 
-    let divheaderlink = document.createElement('div');
-    divheaderlink.className = "header-links";
+//     let divheaderlink = document.createElement('div');
+//     divheaderlink.className = "header-links";
     
 
-    let ulel = document.createElement('ul');
-    ulel.className = "header-ul";
-    let liel = document.createElement('li');
-    let buttonel = document.createElement('button');
-    buttonel.className = "menu-link";
-    buttonel.type = "button";
-    buttonel.innerText = "Sign In";
+//     let ulel = document.createElement('ul');
+//     ulel.className = "header-ul";
+//     let liel = document.createElement('li');
+//     let buttonel = document.createElement('button');
+//     buttonel.className = "menu-link";
+//     buttonel.type = "button";
+//     buttonel.innerText = "Sign In";
  
-    let divofmain = document.createElement('div');
+//     let divofmain = document.createElement('div');
 
 
     
 
-    divofmain.className = "containeri";
-    let h1el = document.createElement("h1");
-    h1el.innerText = "Unlimited movies, TV shows, and more. ";
-    let h3el = document.createElement("h3");
-    h3el.innerText = "Watch anywhere. Cancel anytime.";
-    let pel = document.createElement("p");
-    pel.innerText = "Ready to watch? Enter your email to create or restart your membership.";
-    let formel = document.createElement("form");
-    formel.className = "container";
-    formel.action = "#";
-    let formh1 = document.createElement("h1");
-    formh1.innerText = "Sign Up";
-    let formelementdiv = document.createElement("div");
-    formelementdiv.className = "form-element";
-    let inputform = document.createElement("input");
-    inputform.type = "text";
-    inputform.name = "username";
-    inputform.id="username";
-    inputform.required;
-    let formlabel = document.createElement("label");
-    formlabel.className = "floating-label";
-    formlabel.htmlFor= "username";
-    formlabel.innerText = "Email or Phone Number";
+//     divofmain.className = "containeri";
+//     let h1el = document.createElement("h1");
+//     h1el.innerText = "Unlimited movies, TV shows, and more. ";
+//     let h3el = document.createElement("h3");
+//     h3el.innerText = "Watch anywhere. Cancel anytime.";
+//     let pel = document.createElement("p");
+//     pel.innerText = "Ready to watch? Enter your email to create or restart your membership.";
+//     let formel = document.createElement("form");
+//     formel.className = "container";
+//     formel.action = "#";
+//     let formh1 = document.createElement("h1");
+//     formh1.innerText = "Sign Up";
+//     let formelementdiv = document.createElement("div");
+//     formelementdiv.className = "form-element";
+//     let inputform = document.createElement("input");
+//     inputform.type = "text";
+//     inputform.name = "username";
+//     inputform.id="username";
+//     inputform.required;
+//     let formlabel = document.createElement("label");
+//     formlabel.className = "floating-label";
+//     formlabel.htmlFor= "username";
+//     formlabel.innerText = "Email or Phone Number";
     
 
-    let pswdiv = document.createElement("div");
-    pswdiv.className = "form-element";
+//     let pswdiv = document.createElement("div");
+//     pswdiv.className = "form-element";
     
 
-    let inputpsw = document.createElement("input");
-    inputpsw.name = "password";
-    inputpsw.id = "password";
-    inputpsw.required;
-    inputpsw.setAttribute("type","password");
+//     let inputpsw = document.createElement("input");
+//     inputpsw.name = "password";
+//     inputpsw.id = "password";
+//     inputpsw.required;
+//     inputpsw.setAttribute("type","password");
 
-    let pswlabel = document.createElement("label");
+//     let pswlabel = document.createElement("label");
    
-    pswlabel.className = "floating-label";
-    pswlabel.htmlFor = "password";
-    pswlabel.innerText = "Password";
-    let buttonsignup = document.createElement("button");
-    buttonsignup.className = "btn";
+//     pswlabel.className = "floating-label";
+//     pswlabel.htmlFor = "password";
+//     pswlabel.innerText = "Password";
+//     let buttonsignup = document.createElement("button");
+//     buttonsignup.className = "btn";
     
-    buttonsignup.innerText = "Sign Up";
+//     buttonsignup.innerText = "Sign Up";
 
-    header?.append(headerdiv,divheaderlink);
-    headerdiv.append(imgEL);
-    liel.append(buttonel);
-    ulel.append(liel);
-    divheaderlink.append(ulel);
+//     header?.append(headerdiv,divheaderlink);
+//     headerdiv.append(imgEL);
+//     liel.append(buttonel);
+//     ulel.append(liel);
+//     divheaderlink.append(ulel);
 
-    main?.append(divofmain);
-    divofmain.append(h1el,h3el,pel,formel,);
-    formelementdiv.append(inputform,formlabel);
-    pswdiv.append(inputpsw,pswlabel);
-    formel.append(formh1,formelementdiv,pswdiv,buttonsignup);
-    buttonel.addEventListener("click",signinPage)
+//     main?.append(divofmain);
+//     divofmain.append(h1el,h3el,pel,formel,);
+//     formelementdiv.append(inputform,formlabel);
+//     pswdiv.append(inputpsw,pswlabel);
+//     formel.append(formh1,formelementdiv,pswdiv,buttonsignup);
+//     buttonel.addEventListener("click",signinPage)
     
 
 
-}
+// }
 
-function signinPage(){
-    header.innerHTML = "";
-    main.innerHTML = "";
-    let headerdiv = document.createElement('div');
-headerdiv.className = "logo-text";
-let imgEL = document.createElement('img');
-imgEL.src = "./img/netflix-82871.png";
-imgEL.className = "logoimg"
-
-
-let divheaderlink = document.createElement('div');
-divheaderlink.className = "header-links";
+// function signinPage(){
+//     header.innerHTML = "";
+//     main.innerHTML = "";
+//     let headerdiv = document.createElement('div');
+// headerdiv.className = "logo-text";
+// let imgEL = document.createElement('img');
+// imgEL.src = "./img/netflix-82871.png";
+// imgEL.className = "logoimg"
 
 
-let ulel = document.createElement('ul');
-ulel.className = "header-ul";
-let liel = document.createElement('li');
-let buttonel1 = document.createElement('button');
-buttonel1.className = "menu-link";
-buttonel1.type = "button";
-buttonel1.innerText = "Sign Up";
+// let divheaderlink = document.createElement('div');
+// divheaderlink.className = "header-links";
 
 
-
-
-let divofmain = document.createElement('div');
+// let ulel = document.createElement('ul');
+// ulel.className = "header-ul";
+// let liel = document.createElement('li');
+// let buttonel1 = document.createElement('button');
+// buttonel1.className = "menu-link";
+// buttonel1.type = "button";
+// buttonel1.innerText = "Sign Up";
 
 
 
 
-divofmain.className = "containeri";
-
-let formel = document.createElement("form");
-formel.className = "container";
-formel.action = "#";
-let formh1 = document.createElement("h1");
-formh1.innerText = "Sign In";
-let formelementdiv = document.createElement("div");
-formelementdiv.className = "form-element";
-let inputform = document.createElement("input");
-inputform.type = "text";
-inputform.name = "username";
-inputform.id="username";
-inputform.required;
-let formlabel = document.createElement("label");
-formlabel.className = "floating-label";
-formlabel.htmlFor= "username";
-formlabel.innerText = "Email or Phone Number";
-
-
-let pswdiv = document.createElement("div");
-pswdiv.className = "form-element";
-
-
-let inputpsw = document.createElement("input");
-inputpsw.name = "password";
-inputpsw.id = "password";
-inputpsw.required;
-inputpsw.setAttribute("type","password");
-
-let pswlabel = document.createElement("label");
-
-pswlabel.className = "floating-label";
-pswlabel.htmlFor = "password";
-pswlabel.innerText = "Password";
-let buttonsignup = document.createElement("button");
-buttonsignup.className = "btn";
-buttonsignup.innerText = "Sign In";
+// let divofmain = document.createElement('div');
 
 
 
-header?.append(headerdiv,divheaderlink);
-headerdiv.append(imgEL);
-liel.append(buttonel1);
-ulel.append(liel);
-divheaderlink.append(ulel);
 
-main?.append(divofmain);
-divofmain.append(formel,);
-formelementdiv.append(inputform,formlabel);
-pswdiv.append(inputpsw,pswlabel);
-formel.append(formh1,formelementdiv,pswdiv,buttonsignup);
+// divofmain.className = "containeri";
+
+// let formel = document.createElement("form");
+// formel.className = "container";
+// formel.action = "#";
+// let formh1 = document.createElement("h1");
+// formh1.innerText = "Sign In";
+// let formelementdiv = document.createElement("div");
+// formelementdiv.className = "form-element";
+// let inputform = document.createElement("input");
+// inputform.type = "text";
+// inputform.name = "username";
+// inputform.id="username";
+// inputform.required;
+// let formlabel = document.createElement("label");
+// formlabel.className = "floating-label";
+// formlabel.htmlFor= "username";
+// formlabel.innerText = "Email or Phone Number";
 
 
-buttonel1.addEventListener("click",renderMainPage)
+// let pswdiv = document.createElement("div");
+// pswdiv.className = "form-element";
 
 
-}
+// let inputpsw = document.createElement("input");
+// inputpsw.name = "password";
+// inputpsw.id = "password";
+// inputpsw.required;
+// inputpsw.setAttribute("type","password");
+
+// let pswlabel = document.createElement("label");
+
+// pswlabel.className = "floating-label";
+// pswlabel.htmlFor = "password";
+// pswlabel.innerText = "Password";
+// let buttonsignup = document.createElement("button");
+// buttonsignup.className = "btn";
+// buttonsignup.innerText = "Sign In";
+
+
+
+// header?.append(headerdiv,divheaderlink);
+// headerdiv.append(imgEL);
+// liel.append(buttonel1);
+// ulel.append(liel);
+// divheaderlink.append(ulel);
+
+// main?.append(divofmain);
+// divofmain.append(formel,);
+// formelementdiv.append(inputform,formlabel);
+// pswdiv.append(inputpsw,pswlabel);
+// formel.append(formh1,formelementdiv,pswdiv,buttonsignup);
+
+
+// buttonel1.addEventListener("click",renderMainPage)
+
+
+// }
 
 function renderHeader(){
   let movieContainer = document.querySelector(".main-container");
@@ -256,80 +256,90 @@ function renderHeader(){
   movieContainer.append(headerdiv,divheaderlink);
 }
 // need work on this function
-function renderAMovieCard() {
+function renderAMovieCard(source) {
   let movieContainer = document.querySelector(".main-container");
+  // let main = document.querySelector("main");
+  // main.innerHTML = "";
 
   let movieCard = document.createElement("div");
   movieCard.classList.add("single-movie-card");
+  movieCard.addEventListener("click", function () {
+    renderMovieDetails(source);
+  })
 
   let cardImg = document.createElement("img");
-  cardImg.src = state.movies[0].primaryImage.url;
+  cardImg.className = "card-img";
+  cardImg.src = source.primaryImage.url;
+
+
+
+
+
+
+  movieCard.append(cardImg);
+
+  movieContainer.appendChild(movieCard);
+}
+function renderMovieDetails(api){
+  let movieContainer = document.querySelector(".main-container");
+  movieContainer.innerHTML = "";
 
   let movieDetails = document.createElement("div");
   movieDetails.classList.add("movie-details");
+
+  let movieImg = document.createElement("img");
+  movieImg.className = "movie-img";
+  movieImg.src = api.primaryImage.url;
+
+  let movieDetailsContainer = document.createElement("div");
+  movieDetailsContainer.classList.add("movie-details-container");
+
   let movieTitle = document.createElement("h1");
-  movieTitle.innerHTML = state.movies[0].titleText.text;
+  movieTitle.innerHTML = api.titleText.text;
 
   let movieYear = document.createElement("div");
   movieYear.classList.add("year");
-  movieYear.innerText = state.movies[0].releaseDate.year;
-
-  let movieDuration = document.createElement("div");
-  movieDuration.classList.add("duration");
-  movieDuration.innerText = state.movies[0].duration;
-
-  let movieCategory = document.createElement("div");
-  movieCategory.classList.add("category");
-  movieCategory.innerText = state.movies[0].genre;
-
-  let movieRating = document.createElement("div");
-  movieRating.classList.add("rating");
-  movieRating.innerText = state.movies[0].rating;
-
-  let movieDescription = document.createElement("div");
-  movieDescription.classList.add("movie-description");
-
-  let moviePlot = document.createElement("p");
-  moviePlot.innerText = state.movies[0].plot;
+  movieYear.innerText = api.releaseDate.year;
 
   let watchNow = document.createElement("button");
   watchNow.classList.add("watch-now");
   watchNow.innerText = "Watch Now";
 
-  let addToList = document.createElement("button");
-  addToList.classList.add("add-to-list");
-  addToList.innerText = "+";
+  let goBack = document.createElement("button");
+  goBack.classList.add("go-back");
+  goBack.innerText = "↩️ Go Back";
+  goBack.addEventListener("click", function () {
+    location.reload();
+  })
 
-  movieDescription.appendChild(moviePlot);
-  movieDetails.append(
+  movieDetailsContainer.append(
     movieTitle,
     movieYear,
-    movieDuration,
-    movieCategory,
-    movieRating,
-    movieDescription,
     watchNow,
-    addToList
+    goBack
   );
 
-  movieCard.append(cardImg, movieDetails);
+  movieDetails.append(movieImg, movieDetailsContainer);
 
-  movieContainer.appendChild(movieCard);
+  movieContainer.appendChild(movieDetails);
 }
+
+  //
 
 function render() {
   // let movieContainer = document.querySelector(".main-container");
   // movieContainer.innerHTML = "";
   // if(state.users[0].email === "john@john.com"){
   //   // renderHeader();
-  //   for (let elem of state.movies) {
-  //     renderAMovieCard();
-  // }
+    for (let elem of state.movies) {
+      renderAMovieCard(elem);
+  }
   // }else{
 
     
   // }
-  renderMainPage();
+
+  // renderMainPage();
 }
 
 // render();

@@ -18,7 +18,8 @@ a{
 body{
   font-family: 'Bebas Neue', cursive;
   background-color: #000;
-  
+  /* max-width: 100%;
+    overflow-x: hidden; */
 
 
 } 
@@ -79,27 +80,41 @@ header{
 }
 
 /* main */
-main{
+/* main{
   background-image: url("./netflix-background-128505-385441-537479.png") ;
   background-size: cover;
   height: 100vh; 
-}
+} */
 .main-container{
-  margin-top: 3rem;
-  padding: 0rem 3rem;
+  /* width: 100%;
+  height: 100vh; */
+  /* margin-top: 3rem; */
+  /* padding: 0rem 3rem; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* place-content: center; */
 }
 .single-movie-card{
-  height: auto;
-  width: 200px;
-  border: solid 1px rgba(255, 0, 0, 0.567);
+  height: 400px;
+  width: 250px;
+  /* border: solid 1px rgba(255, 0, 0, 0.567); */
   color: rgb(255, 255, 255);
 }
-.movie-details{
+/* .single-movie-card:hover{
+  transform: translate3d(0px, -1px, 0px);
+  transition: 0.5s;
+} */
+/* .card-img{
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+/* .movie-details{
   padding-left: 1rem;
   padding-bottom: 1rem;
-}
+} */
 .containeri{
   padding-top: 8%;
   text-align: center;
@@ -182,3 +197,65 @@ input:valid ~ .floating-label {
   font-size: 11px;
   top: 7px;
 }
+.watch-now {
+  width: 150px;
+  height: 50px;
+  margin-top: 24px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  background-color:black;
+  border: #e509144b solid 1px;
+}
+.add-to-list {
+  width: 25px;
+  height: 25px;
+  margin-top: 24px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50%;
+  border: none;
+  color: #ffffff;
+  background-color:rgb(255, 0, 0);
+  border: #e509144b solid 1px;
+}
+
+/* movie details */
+.movie-details{
+  display: grid;
+  grid-auto-flow: column;
+  height: 100vh;
+  width: 100vw;
+  color: rgb(255, 255, 255);
+  place-items: center;
+}
+.movie-img{
+  width: 400px;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.go-back{
+  width: 140px;
+  height: 50px;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+}
+/* .movie-details-container{
+  margin-right: 20rem;
+  display: grid;
+  gap: 1rem;
+} */
