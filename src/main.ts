@@ -175,10 +175,64 @@ let state = {
     pswdiv.append(inputpsw,pswlabel);
     formel.append(formh1,formelementdiv,pswdiv,buttonsignup);
     buttonel.addEventListener("click",signinPage)
+   
+    let user; // Variabel bosh ku do te ruhet username i userit
+    let pass; // Variabel bosh ku do te ruhet pass i userit
+
+
+    // Ky esht 1 funksion i cili ka 2 parametra (user, pass) qe jan info te cilat do te ruhen ne local storage
+    // pasi user te regjistrohet me sukses
+
+    function addToLocalStorage(user, pass) {
+
+      // Ky esht 1 objekt i cili ruan te dhenat e user qe me posht do te kalohen ne local storage
+
+      let info = [
+        {
+          name: user,
+          pass: pass
+        },
+      ] 
+
+      // Ruajtja e te dhenave ne local storage
+      // "userInfo" esht thjesht emri ose ndryshe key i cili mban info e user
+      // ndersa JSON.stringify(info) esht funksion i cili e kthen objektin e mesiperm info ne string pasi local storage nuk pranon objekte
+
+      localStorage.setItem("userInfo", JSON.stringify(info));
+
+    }
     
+
+    // Kur forma sign up te behet submit ekzekutohet kodi i meposhtem
+
+    formel.addEventListener('submit', (e) => {
+      
+      if (inputform.value == '') { // nese username ose email esht = bosh atehere bej alert mesazhin e meposhtem
+        e.preventDefault(); // The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+        alert('Please enter a valid username or e-mail!')
+      } else if (inputpsw.value == '') { // nese password esht = bosh atehere bej alert mesazhin e meposhtem
+        e.preventDefault();
+        alert('Please complete the password field to continue');
+      } else {
+        e.preventDefault();
+        user = inputform.value; // nese kushtet e mesiperme kalohen me sukses me pas vleren te cilen user futi tek username beje assign tek variabla user pra ( user = me vleren qe futi useri )
+        pass = inputpsw.value; // nese kushtet e mesiperme kalohen me sukses me pas vleren te cilen user futi tek password beje assign tek variabla pass pra ( pass = me vleren qe futi useri )
+        addToLocalStorage(user, pass); // nese kushtet e mesiperme kalohen me sukses ekzekuto funksionin dhe user dhe pass si parametra te funksionit
+        alert('You have successfully registered. Thank you!');
+
+        // pas submit boshatis fushen e user dhe pass
+        inputform.value = ''; 
+        inputpsw.value = '';
+      }
+    })
+
+
+
 
 
 }
+
+
 
 function signinPage(){
        
@@ -266,7 +320,11 @@ formel.append(formh1,formelementdiv,pswdiv,buttonsignup);
 buttonel1.addEventListener("click",renderMainPage)
 
 
+
+
+
 }
+
 
 renderMainPage()
 function renderAMovieCard() {
