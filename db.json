@@ -1,0 +1,23 @@
+
+    {
+      "movies": [
+        {
+          "title": "The Shawshank Redemption",
+          "year": "Year : 1994",
+          "rating": "9.2",
+          "duration": "142 min",
+          "genre": "Drama",
+          "plot": "Two imprisoned...",
+          "poster": "https://i.ytimg.com/vi/19THOH_dvxg/movieposter_en.jpg"
+        },
+        {
+          "title": "The Godfather",
+          "year": "Year : 1972",
+          "rating": "9.2",
+          "duration": "175 min",
+          "genre": "Drama",
+          "plot": "Two imprisoned...",
+          "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+        }
+      ]
+    }
